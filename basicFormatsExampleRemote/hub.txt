@@ -1,0 +1,5 @@
+hub exampleFormats
+shortLabel Basic Examples
+longLabel An example hub that features one BAM, bigWig, bigBed, and VCF track with instructions on where to obtain them.
+genomesFile genomes.txt
+email brianlee@soe.ucsc.edu

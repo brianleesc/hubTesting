@@ -1,0 +1,5 @@
+hub multWigTest
+shortLabel multiWigTest
+longLabel A test of MultiWig
+genomesFile genomes.txt
+email brianlee@soe.ucsc.edu
