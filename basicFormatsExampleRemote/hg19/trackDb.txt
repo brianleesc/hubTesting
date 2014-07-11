@@ -1,35 +1,220 @@
 track  bigWig1
-bigDataUrl file1.bw
+bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaMinusRawSigRep1.bigWig
 shortLabel bigWig example
-longLabel To obtain this file use the following command: rsync -A -p rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaMinusRawSigRep1.bigWig ./file1.bw
+longLabel This bigWig file is an example from the ENCODE RNA-seq CSHL Track
 type bigWig
 visibility dense
-html example
-#above will work
 
 track bam1
-bigDataUrl file2.bam
+bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqK562CellTotalAlnRep2.bam
 shortLabel BAM example
-longLabel To obtain this BAM file use the following then repeat for *.bam.bai file2.bam.bai: rsync -Ap rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqK562CellTotalAlnRep2.bam ./file2.bam 
+longLabel This BAM file is an example from the ENCODE RNA-seq CSHL Track
 type bam
 visibility dense
-html example.html
-#above will not work
 
 track bigBed1
-bigDataUrl file3.bb
+bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCaltechRnaSeq/wgEncodeCaltechRnaSeqGm12891R2x75Il200JunctionsRep1V3.bigBed
 shortLabel bigBed example
-longLabel To obtain this bigWig file use the following command: rsync -Ap rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCaltechRnaSeq/wgEncodeCaltechRnaSeqGm12891R2x75Il200JunctionsRep1V3.bigBed ./file3.bb
+longLabel This bigBed file is an example from the ENCODE RNA-seq Caltech Track
 type bigBed
 visibility dense
-html http://hgwdev.cse.ucsc.edu/~brianlee/hubTesting/basicFormatsExample/hg19/example.html
-#the above will not work
 
 track vcf1
-bigDataUrl file4.vcf.gz
-shortLabel chrY VCF example
-longLabel To obtain this file use the following then repeat for *vcf.gz.tbi file4.vcf.gz.tbi files:  rsync -Ap rsync://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/ALL.chrY.phase1_samtools_si.20101123.snps.low_coverage.genotypes.vcf.gz ./file4.vcf.gz
+bigDataUrl http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/ALL.chr1.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.vcf.gz
+shortLabel chr1 VCF example
+longLabel This chr1 VCF file is an example from the 1000 Genomes Phase 1 Integrated Variant Calls Track
 type vcfTabix
 visibility dense
-html ../../basicFormatsExample/hg19/example
-# the above will work
+
+#####################################################
+track multiWig1
+container multiWig
+shortLabel MulitWig Example Track
+longLabel This track displays the overlay multWig feature using three bigWig files as examples from the  ENCODE RNA-seq CSHL Track
+type bigWig
+visibility full
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+maxHeightPixels 500:50:8
+
+                track wig1
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaMinusRawSigRep1.bigWig
+                shortLabel Overlay bigWig1
+                longLabel This is an example bigWig1 displaying Raw Signal from the ENCODE RNA-seq CSHL track, graphing just points as default.
+                parent multiWig1
+                graphTypeDefault points
+                type bigWig
+                color 255,0,0
+
+                track wig2
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaPlusRawSigRep1.bigWig
+                shortLabel Overlay bigWig2
+                longLabel This is an example bigWig2 displaying Raw Signal from the ENCODE RNA-seq CSHL track, graphing just points as default.
+                graphTypeDefault points
+                parent multiWig1
+                type bigWig
+                color 0,255,0
+
+                track wig3
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqAg04450CellLongnonpolyaPlusRawSigRep1.bigWig
+                shortLabel Overlay bigWig3
+                longLabel This is an example bigWig3 displaying Raw Signal from the ENCODE RNA-seq CSHL track, graphing just points as default. 
+                graphTypeDefault points
+                parent multiWig1
+                type bigWig
+                color 95,158,160
+
+########################################################
+track composite1
+compositeTrack on
+shortLabel Composite Example
+longLabel This is a composite Track that groups related information together into subtracks.
+visibility dense
+type bam
+
+                track composite1.Bam1
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnase8988tAlnRep1.bam
+                shortLabel Example BAM 1
+                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track set to display by default
+                parent composite1 on
+                type bam
+
+                track composite1.Bam2
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnaseAdultcd4th0AlnRep1.bam
+                shortLabel Example BAM 2
+                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track set to display by default
+                parent composite1 on
+                type bam
+
+                track composite1.Bam3
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnaseFibroblgm03348AlnRep2.bam
+                shortLabel Example BAM 3
+                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track
+                parent composite1 off
+                type bam
+
+                track composite1.Bam4
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnaseK562G2mphaseAlnRep3.bam
+                shortLabel Example BAM 4
+                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track
+                parent composite1 off
+                type bam
+
+#########################################################
+track superTrack1
+superTrack on show
+shortLabel  Example SuperTrack
+longLabel Example SuperTrack That Groups Unrelated          
+
+                track st1.bigWig1
+                parent superTrack1
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaPlusRawSigRep2.bigWig                  
+                shortLabel bigWig example
+                longLabel This SuperTrack contained bigWig file is an example from the ENCODE RNA-seq CSHL Track
+                type bigWig
+                visibility dense
+                priority 10
+
+                track st1.bam1
+                parent superTrack1
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellPapAlnRep1.bam
+                shortLabel BAM example
+                longLabel This SuperTrack contained BAM file is an example from the ENCODE RNA-seq CSHL Track
+                type bam
+                visibility dense
+                priority 20
+
+                track st1.bigBed1
+                parent superTrack1
+                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCaltechRnaSeq/wgEncodeCaltechRnaSeqGm12892R2x75Il200JunctionsRep3V3.bigBed
+                shortLabel bigBed example
+                longLabel This SuperTrack contained bigBed file is an example from the ENCODE RNA-seq Caltech Track
+                type bigBed
+                visibility dense
+                priority 30
+
+                track st1.vcf1
+                parent superTrack1
+                bigDataUrl http://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/ALL.chr2.integrated_phase1_v3.20101123.snps_indels_svs.genotypes.vcf.gz
+                shortLabel chr2 VCF example
+                longLabel This SuperTrack contained chr2 VCF file is an example from the 1000 Genomes Phase 1 Integrated Variant Calls Track
+                type vcfTabix
+                visibility dense
+                priority 40
+
+                track st1.multiWig1
+                parent superTrack1
+                container multiWig      
+                shortLabel MulitWig Example Track
+                longLabel This SuperTrack contained overlay multWig feature using three bigWig files as examples from the  ENCODE RNA-seq CSHL Track
+                type bigWig
+                visibility full
+                aggregate transparentOverlay
+                showSubtrackColorOnUi on
+                maxHeightPixels 500:50:8
+                priority 50
+
+                                track st1.wg1.wig1
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaMinusRawSigRep1.bigWig
+                                shortLabel Overlay bigWig1
+                                longLabel This is an example bigWig1 displaying Raw Signal from the ENCODE RNA-seq CSHL track, graphing just points as default.
+                                parent st1.multiWig1
+                                graphTypeDefault points
+                                type bigWig
+                                color 255,0,0
+
+                                track st1.mw1.wig2
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaPlusRawSigRep1.bigWig
+                                shortLabel Overlay bigWig2
+                                longLabel This is an example bigWig2 displaying Raw Signal from the ENCODE RNA-seq CSHL track, graphing just points as default.
+                                graphTypeDefault points
+                                parent st1.multiWig1
+                                type bigWig
+                                color 0,255,0
+
+                                track st1.mw1.wig3
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqAg04450CellLongnonpolyaPlusRawSigRep1.bigWig
+                                shortLabel Overlay bigWig3
+                                longLabel This is an example bigWig3 displaying Raw Signal from the ENCODE RNA-seq CSHL track, graphing just points as default.
+                                graphTypeDefault points
+                                parent st1.multiWig1
+                                type bigWig
+                                color 95,158,160
+
+
+               track st1.composite1
+               parent superTrack1
+               compositeTrack on
+               shortLabel Composite Example
+               longLabel This SuperTrack contained composite Track example groups related BAM information together into subtracks.
+               visibility dense
+               type bam
+               priority 60
+
+                                track st1.composite1.Bam1
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnase8988tAlnRep1.bam
+                                shortLabel Example BAM 1
+                                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track set to display by default
+                                parent st1.composite1 on
+                                type bam
+
+                                track st1.composite1.Bam2
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnaseAdultcd4th0AlnRep1.bam
+                                shortLabel Example BAM 2
+                                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track set to display by default
+                                parent st1.composite1 on
+                                type bam
+
+                                track st1.composite1.Bam3
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnaseFibroblgm03348AlnRep2.bam
+                                shortLabel Example BAM 3
+                                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track
+                                parent st1.composite1 off
+                                type bam
+
+                                track st1.composite1.Bam4
+                                bigDataUrl http://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeOpenChromDnase/wgEncodeOpenChromDnaseK562G2mphaseAlnRep3.bam
+                                shortLabel Example BAM 4
+                                longLabel This is an example BAM in a composite track from the ENCODE Open Chrom DNase Track
+                                parent st1.composite1 off
+                                type bam
