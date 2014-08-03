@@ -1,35 +1,6 @@
-track  bigWig1
-bigDataUrl file1.bw
-shortLabel bigWig example
-longLabel To obtain this file use the following command: rsync -A -p rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqA549CellLongnonpolyaMinusRawSigRep1.bigWig ./file1.bw
-type bigWig
-visibility dense
-html example
-#above will work
-
 track bam1
 bigDataUrl file2.bam
 shortLabel BAM example
 longLabel To obtain this BAM file use the following then repeat for *.bam.bai file2.bam.bai: rsync -Ap rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqK562CellTotalAlnRep2.bam ./file2.bam 
 type bam
 visibility dense
-html example.html
-#above will not work
-
-track bigBed1
-bigDataUrl file3.bb
-shortLabel bigBed example
-longLabel To obtain this bigWig file use the following command: rsync -Ap rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCaltechRnaSeq/wgEncodeCaltechRnaSeqGm12891R2x75Il200JunctionsRep1V3.bigBed ./file3.bb
-type bigBed
-visibility dense
-html http://hgwdev.cse.ucsc.edu/~brianlee/hubTesting/basicFormatsExample/hg19/example.html
-#the above will not work
-
-track vcf1
-bigDataUrl file4.vcf.gz
-shortLabel chrY VCF example
-longLabel To obtain this file use the following then repeat for *vcf.gz.tbi file4.vcf.gz.tbi files:  rsync -Ap rsync://hgdownload.cse.ucsc.edu/gbdb/hg19/1000Genomes/ALL.chrY.phase1_samtools_si.20101123.snps.low_coverage.genotypes.vcf.gz ./file4.vcf.gz
-type vcfTabix
-visibility dense
-html ../../basicFormatsExample/hg19/example
-# the above will work
