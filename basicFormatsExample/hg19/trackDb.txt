@@ -1,6 +1,6 @@
-track bam1
-bigDataUrl file2.bam
-shortLabel BAM example
-longLabel To obtain this BAM file use the following then repeat for *.bam.bai file2.bam.bai: rsync -Ap rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/wgEncodeCshlLongRnaSeqK562CellTotalAlnRep2.bam ./file2.bam 
-type bam
+track bigBed1
+bigDataUrl file3.bb
+shortLabel bigBed example
+longLabel To obtain this bigWig file use the following command: rsync -Ap rsync://hgdownload.soe.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCaltechRnaSeq/wgEncodeCaltechRnaSeqGm12891R2x75Il200JunctionsRep1V3.bigBed ./file3.bb
+type bigBed
 visibility dense
