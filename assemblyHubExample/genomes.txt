@@ -1,0 +1,9 @@
+genome ricCom1
+trackDb ricCom1/trackDb.txt
+groups ricCom1/groups.txt
+description July 2011 Castor bean
+twoBitPath http://genome-test.cse.ucsc.edu/~hiram/hubs/Plants/ricCom1/ricCom1.2bit
+organism Ricinus communis
+defaultPos EQ973772:1000000-2000000
+scientificName Ricinus communis
+htmlPath ricCom1/description.html

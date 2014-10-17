@@ -1,0 +1,6 @@
+hub hubName
+shortLabel genome
+longLabel Comment describing this hub contents
+genomesFile genomes.txt
+email contactEmail@institution.edu
+descriptionUrl plants.html
