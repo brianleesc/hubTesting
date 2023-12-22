@@ -1,0 +1,71 @@
+hub decorations
+useOneFine on
+shortLabel decorate
+longLabel New Decorations
+
+hg38
+
+
+track testTrackC
+type bigBed 12
+shortLabel Circle
+longLabel Circle Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsCircle.bb
+
+track testTrackD
+type bigBed 12
+shortLabel Diamond
+longLabel Diamond Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsDiamond.bb
+
+track testTrackInvT
+type bigBed 12
+shortLabel InvertedTriangle
+longLabel Inverted Triangle Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsInvTriangle.bb
+
+track testTrackO
+type bigBed 12
+shortLabel Octagon
+longLabel Octagon Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsOctagon.bb
+
+track testTrackP
+type bigBed 12
+shortLabel Pentagon
+longLabel Pentagon Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsPentagram.bb
+
+track testTrackS
+type bigBed 12
+shortLabel Square
+longLabel Square Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsSquare.bb
+
+track testTrackSt
+type bigBed 12
+shortLabel Star
+longLabel Star Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsStar.bb
+
+track testTrackT
+type bigBed 12
+shortLabel Triangle
+longLabel Triangel Track
+bigDataUrl https://genome.ucsc.edu/goldenPath/help/examples/decorator/main.bb
+itemRgb on
+decorator.default.bigDataUrl decorationsTriangle.bb
