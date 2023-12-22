@@ -2,9 +2,9 @@ hub decorations
 useOneFine on
 shortLabel decorate
 longLabel New Decorations
+email example@example.com
 
 hg38
-
 
 track testTrackC
 type bigBed 12
